@@ -1,6 +1,5 @@
 // get data from data file
 var data_final = data;
-console.log(data_final);
 
 // reference table body
 var tbody = d3.select("tbody");
@@ -11,15 +10,16 @@ function makeTable(data_final){
     //console log data to make sure it is there
     data_final.forEach(function(row) {
         console.log(row);
+        var row = tbody.append("tr");
+
+            // add data to table in html
+            Object.values(row).forEach((value) => {
+                var cell = row.append("td");
+                cell.text(value);
+            });
+
     });
     
-    // add data to table in html
-    Object.values(data_final).forEach((value) => {
-        var row = tbody.append("tr");
-        var cell = row.append("td");
-        cell.text(value);
-    });
-
 };
 
 //filter data function (index.html, #datetime)
