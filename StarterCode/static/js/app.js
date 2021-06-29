@@ -8,12 +8,12 @@ var tbody = d3.select("tbody");
 function makeTable(data_final){
     
     //console log data to make sure it is there
-    data_final.forEach(function(row) {
+    data_final.forEach((row) => {
         console.log(row);
-        var row = tbody.append("tr");
 
             // add data to table in html
             Object.values(row).forEach((value) => {
+                var row = tbody.append("tr");
                 var cell = row.append("td");
                 cell.text(value);
             });
@@ -25,11 +25,12 @@ function makeTable(data_final){
 //filter data function (index.html, #datetime)
 function filterData(){
     var date = d3.select("#datetime").property("value");
-    filterData = data_final.filter(row => row.datetime === date);
+    var filteredData = data_final.filter(row => row.datetime === date);
+    makeTable(filteredData);
 };
 
 //event listener for clicks (index.html, #filter-btn)
-//d3.selectAll("filter-btn").on("click");
+d3.selectAll("#filter-btn").on("click", filterData);
 
 //call make table function
 makeTable(data_final);
