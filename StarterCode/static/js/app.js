@@ -1,4 +1,12 @@
-// from data.js
+// get data from data file
 var tableData = data;
 
-// YOUR CODE HERE!
+//make table function
+
+//filter data function
+
+//event listener for clicks
+
+//call make table function
+
+
