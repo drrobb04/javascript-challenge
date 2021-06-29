@@ -11,7 +11,14 @@ function makeTable(){
     //console log data to make sure it is there
     data_final.forEach(function(row) {
         console.log(row);
-        });
+    });
+    
+    // add data to table in html
+    data_final.forEach(function(row) {
+        var row = tbody.append("tr");
+        var cell = row.append("td");
+        cell.text(value);
+    });
 
 };
 
