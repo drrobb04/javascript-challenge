@@ -6,7 +6,7 @@ console.log(data_final);
 var tbody = d3.select("tbody");
 
 //make table function
-function makeTable(){
+function makeTable(data_final){
     
     //console log data to make sure it is there
     data_final.forEach(function(row) {
@@ -14,7 +14,7 @@ function makeTable(){
     });
     
     // add data to table in html
-    data_final.forEach(function(row) {
+    Object.values(data_final).forEach((value) => {
         var row = tbody.append("tr");
         var cell = row.append("td");
         cell.text(value);
@@ -32,4 +32,4 @@ function filterData(){
 //d3.selectAll("filter-btn").on("click");
 
 //call make table function
-makeTable(data);
+makeTable(data_final);
